@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./Style.css" rel="stylesheet" type="text/css">
+		<title>MU Elections</title>
+		<script src="login.js" type="text/javascript" ></script>		
+    </head>
+    <body>
+<!-- div for the login form -->
+    <div id = "sideLogin"></div>
+<!-- div for the title bar-->
+    <div id = "top"></div>
+<!-- div for the main, the only thing that changes for each page -->
+
+    <div id = "main">
+		<br><br><br><br>
+		<a style="color: black" href="./VotePage.html"> Debate Club Presidential Election</a>
+		<br>
+		<a style="color: black" href="./VotePage2.html"> LilyPad Survey</a>
+		<br>
+		<a style="color: black" href="./VotePage3.html"> Cartography Club Elections</a>
+		<br>
+		<a style="color: black" href="./VotePage4.html"> Teacher of the Year</a>
+	</div>	
+	
+<!-- div for the sideLinks. Does not change -->		
+		<div id = "sideLinks"></div>
+    </body>
+	<!--This functions adds in everything that is consistant throughout all the pages-->
+	<script>
+		if (!isEligible()){
+			document.getElementById("main").innerHTML = "<br><br><br><br>Sorry!<br> You are ineligible to vote.";
+		}
+		populatePage();
+	</script>
+</html>

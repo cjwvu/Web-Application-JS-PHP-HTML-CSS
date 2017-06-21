@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./Style.css" rel="stylesheet" type="text/css">
+		<title>MU Elections</title>
+		<script src="login.js" type="text/javascript" ></script>
+		<script src="create.js" type="text/javascript" ></script>
+    </head>
+    <body>
+<!-- div for the login form -->
+    <div id = "sideLogin"></div>
+<!-- div for the title bar-->
+    <div id = "top"></div>
+<!-- div for the main, the only thing that changes for each page -->
+
+    <div id = "main">
+		<form id = "ballot" action = "createBallot.php" onsubmit="return confirm('Are you sure?');">
+			<p id = "FixedOptions">
+				Start Date:
+				<input type = "number" id = "startMonth" required = "required" class = "dateTime" min="1" max="12">/
+				<input type = "number" id = "startDay" required = "required" class = "dateTime" min ="1" max="31">/
+				<input type = "number" id = "startYear" required = "required" class = "dateTime" min="2015" max ="2016">
+				Start Time:
+				<input type = "number" id = "startHour" required = "required" class = "dateTime" min="0" max="23">
+				:
+				<input type = "number" id = "startMinute" required = "required" class = "dateTime" min ="0" max="60">
+				<br>
+				End Date:
+				<input type = "number" id = "endMonth" required = "required" class = "dateTime" min="1" max="12">/
+				<input type = "number" id = "endDay" required = "required" class = "dateTime" min ="1" max="31">/
+				<input type = "number" id = "endYear" required = "required" class = "dateTime" min="2015" max ="2016">
+				End Time:
+				<input type = "number" id = "endHour" required = "required" class = "dateTime" min="0" max="23">
+				:
+				<input type = "number" id = "endMinute" required = "required" class = "dateTime" min ="0" max="60">
+				<br>
+				<br>
+				<input type = "text" id = "password" placeholder = "Poll Password(Optional) ">
+			</p>			
+			<p id = "ballotInfo">
+			<input type = "text" id = "title" class = "head" placeholder = "Title For The Ballot" required = "required">
+			</p>
+			<p id = 'buttonArea'>
+			<button type = "button" onClick = "addSection()" id = "addButton">New Section</button>
+			<br>
+			<input type = "submit" value = "Submit" id = "submitButton" >
+			</p>
+		<form>
+	</div>	
+	
+<!-- div for the sideLinks. Does not change -->		
+		<div id = "sideLinks"></div>
+    </body>
+	<!--This functions adds in everything that is consistant throughout all the pages-->
+	<script>
+		populatePage();
+		if (!isCommissioner()){
+			disable();
+			popup();
+		} 
+	</script>
+</html>
+
+
